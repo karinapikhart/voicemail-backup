@@ -1,19 +1,20 @@
 # @karinapikhart
 
-# version history
-# 2018-07-21 V0.1
+# Version History
+# * 2018-07-22 V1.0 - usable version; improvement opportunities documented in To Dos (below)
+# * 2018-07-21 V0.1 - functional tracer bullet
 
 # Background:
-# I was inspired to make this script when I was cleaning up my voicemails
-# and came across one from my godfather, who had recently passed away.
-# Hearing his voice was so precious, especially knowing I would never hear it in real
-# life again, so I decided to try to figure out how to scrape voice mails from old iPhone backups.
+#   I was inspired to make this script when I was cleaning up my voicemails
+#   and came across one from my godfather, who had recently passed away.
+#   Hearing his voice was so precious, especially knowing I would never hear it in real
+#   life again, so I decided to try to figure out how to scrape voice mails from old iPhone backups.
 
 # Credits/Sources:
-# http://www.instructables.com/id/How-to-Download-Voicemail-from-an-iPhone/
+# * http://www.instructables.com/id/How-to-Download-Voicemail-from-an-iPhone/
 
 # Compatible with:
-# iPhone, Mac, python
+# * iPhone, Mac, Python 2.7
 
 # Instructions:
 # 1. Plug your phone into your computer, and back up to your computer (not to iCloud) using iTunes.
@@ -28,19 +29,22 @@
 #    Oh shoot, it's true... you can save voicemails to Dropbox in the iPhone UI. Was that always there?
 #    Was this project a waste? Maybe I need to modify the project to just add helpful metadata to saved m4a voicemail files!!
 
-# NOTES/TODOS:
-# how to remove dup voicemails found in two different backups
-# any metadata to make more sense of the voicemail? - eg phone number, date received etc
-# can we convert to better file type? or only amr?
-# ALLOWED_INPUT_CHARS = 'abc123' # just letters and numbers... avoid evil string injection
-# need to get more robust around what happens if an existing directory is manually provided in validate_backups_directory
-# need to get more robust about chceking whether the stuff found is really iPhone backups, in select_backup
-# make sure you have enough space on the computer to copy all the voicemails!
-# notice that we have 66 GSM, CoreAudio, and GIF -- wonder if they are related to each other?? to investigate later
-# subprocess.check_output line is very slow. need to speed up so script takes <10 minutes!
-# try to run against all available backups. old scripts said that it didnt work on pre-2014 backups ("works for my 2014 backups, but doesn't find anything for my earlier backups")
-# clean up variable names
-# consider a spinoff script that looks at manually saved m4a's and tries to soup them up with helpful metadata...
+# To Dos (roughly prioritized):
+# * subprocess.check_output line is very slow. need to speed up so script takes <10 minutes!
+# * consider a spinoff script that looks at manually saved m4a's and tries to soup them up with helpful metadata...
+#    https://nelsonslog.wordpress.com/2012/02/02/metadata-for-m4a-apple-lossless-alac-files/
+#    mp4file --list ../voicemail-359-manualBackupTest.m4a
+# * try to run against all available backups. old scripts said that it didnt work on pre-2014 backups ("works for my 2014 backups, but doesn't find anything for my earlier backups")
+# * notice that we have 66 GSM, CoreAudio, and GIF -- wonder if they are related to each other?? to investigate later
+# * clean up variable names
+# * ALLOWED_INPUT_CHARS = 'abc123' # just letters and numbers... avoid evil string injection
+# * any metadata to make more sense of the voicemail? - eg phone number, date received etc
+#   looks like no: https://superuser.com/questions/627270/amr-files-properties-recording-date-viewer
+# * can we convert to better file type? or only amr?
+# * need to get more robust around what happens if an existing directory is manually provided in validate_backups_directory
+# * need to get more robust about chceking whether the stuff found is really iPhone backups, in select_backup
+# * make sure you have enough space on the computer to copy all the voicemails!
+
 
 ##########
 # IMPORT #
