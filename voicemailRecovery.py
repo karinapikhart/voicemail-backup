@@ -215,8 +215,8 @@ def fetch_voicemails_from_backup(source_directory, destination_directory):
                 print 'Finished scanning ' + str(i) + ' files...'
 
             # for testing - need to remove for prod
-            if i > 20000:
-                break
+            #if i > 20000:
+            #    break
 
             # this is the slow line of code. so the above 'break' can speed things up by stopping early
             file_type = subprocess.check_output('file -b "' + dirpath + '/' + filename + '"', shell=True)
